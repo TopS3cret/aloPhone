@@ -23,6 +23,20 @@ h2{
 	margin-bottom: 35px;
 }
 
+button{
+	background: none;
+	font-size: 0.9em;
+	padding: 8px 20px;
+	border: 1px solid white;
+	border-radius: 5px;
+	transition: all 0.3s ease-in-out;
+}
+
+button:hover{
+	background: #fff;
+	color:#31B0A5;
+}
+
 .center-vert{
   position: relative;
   top: 50%;
@@ -142,7 +156,7 @@ h2{
 }
 
 #slide3 .right-pane{
-	background-color:#255F85
+	background-color:#255F85;
 }
 
 /*Slide 4*/
@@ -184,22 +198,12 @@ h2{
 	font-weight: 400;
 }
 
+#footer-title{
+	margin-top: 70px;
+}
+
 #slide6 button{
 	margin-top: 15px;
-}
-
-button{
-	background: none;
-	font-size: 0.9em;
-	padding: 8px 20px;
-	border: 1px solid white;
-	border-radius: 5px;
-	transition: all 0.3s ease-in-out;
-}
-
-button:hover{
-	background: #fff;
-	color:#31B0A5;
 }
 
 #footer{
