@@ -118,6 +118,7 @@ h2{
 
 #slide2 {
 	background-color: #FFC857;
+	margin-bottom: 600px;
 }
 
 #slide2 .left-pane{
@@ -132,6 +133,7 @@ h2{
 
 #slide3 {
 	background-color: #255F85;
+	margin-bottom: 1000px; /* 600 + 400 */
 }
 
 #slide3 .left-pane{

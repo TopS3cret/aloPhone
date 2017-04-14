@@ -24,12 +24,12 @@
     <div id="phone-overlay">
       <div class="phone center-vert">
         <div>
-          <img src="images/front.png" />
+          <img id="phone-image" src="images/front.png" />
         </div>
       </div>
     </div>
 
-    <div id="slide1" class="slide">
+    <section id="slide1" class="slide">
       <div class="container fill-vert" style="padding-bottom:80px;">
         <div class="row fill-vert">
           <div class="col-sm-6 fill-vert">
@@ -38,7 +38,7 @@
             </div> -->
           </div>
           <div class="col-sm-6 fill-vert">
-            <div class="center-vert">
+            <div class="center-vert" id="title">
               <h1>aloPhone</h1>
               <div class="div-line"></div>
               <p>Customize me to your liking. Take me apart and swap out my parts.</p>
@@ -68,12 +68,12 @@
           <circle id="XMLID_26_" class="st0" cx="4.7" cy="35.5" r="3.8"/>
         </svg>
       </div>
-    </div>
+    </section>
 
-    <div id="slide2" class="slide two-pane">
+    <section id="slide2" class="slide two-pane">
       <div class="left-pane"></div>
       <div class="right-pane"></div>
-      <div class="container fill-vert">
+      <div class="container fill-vert pane-content">
         <div class="row fill-vert">
           <div class="col-sm-7 fill-vert">
           </div>
@@ -86,12 +86,12 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="slide3" class="slide two-pane">
+    <section id="slide3" class="slide two-pane">
       <div class="left-pane"></div>
       <div class="right-pane"></div>
-      <div class="container fill-vert">
+      <div class="container fill-vert pane-content">
         <div class="row fill-vert">
           <div class="col-sm-7 fill-vert">
           </div>
@@ -104,9 +104,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="slide4" class="slide two-pane">
+    <section id="slide4" class="slide two-pane">
       <div class="left-pane"></div>
       <div class="right-pane"></div>
       <div class="container fill-vert">
@@ -122,11 +122,16 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
+    <script src="js/scrollEffects.js"></script>
   </body>
 </html>
