@@ -136,10 +136,11 @@ button:hover{
 }
 
 #phone-parts .phone-left{
-	width:70px;
+	width:69.5px;
 }
 #phone-parts .phone-right{
-	width:132px;
+	margin-left: -1px;
+	width:133px;
 }
 
 /*Slide 1*/
