@@ -57,6 +57,7 @@ button:hover{
 
 .slide p{
 	font-size:1.6em;
+	color: rgba(255,255,255,0.7);
 }
 
 .div-line{
@@ -178,7 +179,7 @@ button:hover{
 
 #slide3 {
 	background-color: #2A2D30;
-	margin-bottom: 500px; /* 600 + 400 */
+	margin-bottom: 500px;
 }
 
 #slide3 .left-pane{
