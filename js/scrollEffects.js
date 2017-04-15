@@ -108,8 +108,8 @@ $(function () { // wait for document ready
 		.fromTo("#slide4 .pane-content",  1, {x:  "-30%", autoAlpha:0}, {x: "0%", autoAlpha:1, ease: Linear.easeNone}, '-=0.5')
 		.to("#phone-l1", 0.3, {x:-80, ease: Linear.easeNone}, '-=1')
 		.to("#phone-l3", 0.3, {x:-80, ease: Linear.easeNone}, '-=1')
-		.to("#phone-l1", 0.6, {x:-260, rotation:90, ease: Linear.easeNone}, '-=0.7')
-		.to("#phone-l3", 0.6, {x:-400, y:-240, ease: Linear.easeNone}, '-=0.7');
+		.to("#phone-l1", 0.6, {x:-270, rotation:90, ease: Linear.easeNone}, '-=0.7')
+		.to("#phone-l3", 0.6, {x:-410, y:-240, ease: Linear.easeNone}, '-=0.7');
 
 	var changeSideScene = new ScrollMagic.Scene({triggerElement: "#slide3", duration: 1000})
 					.setTween(changeSide)
@@ -137,8 +137,8 @@ $(function () { // wait for document ready
 		.fromTo("#slide5 .pane-content",  1, {y:200}, {y:0, ease: Linear.easeNone}, '-=1')
 		.to("#phone-l2", 0.3, {x:-80, ease: Linear.easeNone}, '-=0.9')
 		.to("#phone-l4", 0.3, {x:-80, ease: Linear.easeNone}, '-=0.9')
-		.to("#phone-l2", 0.5, {x:-260, rotation:90, y:-120, ease: Linear.easeNone}, '-=0.6')
-		.to("#phone-l4", 0.5, {x:-400, y:-294, ease: Linear.easeNone}, '-=0.6');
+		.to("#phone-l2", 0.5, {x:-270, rotation:90, y:-120, ease: Linear.easeNone}, '-=0.6')
+		.to("#phone-l4", 0.5, {x:-410, y:-294, ease: Linear.easeNone}, '-=0.6');
 
 	var slide5pane = new ScrollMagic.Scene({triggerElement: "#slide5", duration: 800})
 					.setTween(slide5paneEnter)
