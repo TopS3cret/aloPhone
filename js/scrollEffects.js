@@ -8,7 +8,7 @@ $(function () { // wait for document ready
 
 
 	// Animacije
-	var floatTween = TweenMax.fromTo("#phone-image", 2, {y:-50},{y:-60, repeat:-1, yoyo:true, ease: Sine.easeInOut});
+	var floatTween = TweenMax.fromTo("#phone", 2, {y:-50},{y:-60, repeat:-1, yoyo:true, ease: Sine.easeInOut});
 	TweenMax.to("#scroll-arrow", 0.5, {scaleX:1.2, scaleY:1.2, repeat:-1, yoyo:true, ease: Sine.easeInOut});
 	TweenMax.to("#scroll-up", 0.5, {scaleX:1.2, scaleY:1.2, repeat:-1, yoyo:true, ease: Sine.easeInOut});
 
@@ -25,7 +25,7 @@ $(function () { // wait for document ready
 					.addTo(controller)
 
 	var phoneSlide = new TimelineMax()
-		.to("#phone-image",  1, {y: "0px", ease: Linear.easeNone})
+		.to("#phone",  1, {y: "0px", ease: Linear.easeNone})
 
 	var phoneSlideScene = new ScrollMagic.Scene({triggerElement: "#slide1", duration: 200})
 					.setTween(phoneSlide)
@@ -42,11 +42,12 @@ $(function () { // wait for document ready
 	var slide2 = new ScrollMagic.Scene({triggerElement: "#slide2"})
 					.setPin("#slide2")
 					.addTo(controller)
+					.setClassToggle("#phone-parts", "visible")
 					.on("start", function (e) {
 						if(e.scrollDirection == 'REVERSE'){
 							$("#phone-image").attr("src", "images/front.png");
 						} else {
-							$("#phone-image").attr("src", "images/back.png");
+							$("#phone-image").attr("src", "images/parts/case.png");
 						}
 						
 					})
@@ -54,13 +55,24 @@ $(function () { // wait for document ready
 	var slide2paneEnter = new TimelineMax()
 		.fromTo("#slide2 .right-pane",  1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone})
 		.fromTo("#slide2 .pane-content",  1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone}, '-=1')
+		.to("#phone-r1", 1, {x:306, ease: Linear.easeNone}, '-=0.5')
 		.set("#slide3 .right-pane", {x:  "100%"})
 		.set("#slide3 .pane-content",  {x:  "100%"});
 
-	var slide2pane = new ScrollMagic.Scene({triggerElement: "#slide2", duration: 400})
+	var slide2pane = new ScrollMagic.Scene({triggerElement: "#slide2", duration: 600})
 					.setTween(slide2paneEnter)
 					.offset(-200)
 					.addTo(controller);
+
+	var parts2Exit = new TimelineMax()
+					.to("#phone-r1", 1, {y:-600, ease: Linear.easeNone})
+					.to("#slide2 .pane-content",  1, {y: -600, ease: Linear.easeNone}, '-=1')
+
+	var slide2exit = new ScrollMagic.Scene({triggerElement: "#slide3", duration:600})
+					.setTween(parts2Exit)
+					.addTo(controller)
+					.triggerHook("onEnter")
+
 
 
 	// Prehodi na slide 3
@@ -79,7 +91,7 @@ $(function () { // wait for document ready
 
 	// Prehodi na slide 4 (menjava strani)
 	var changeSide = new TimelineMax()
-		.to("#phone-image",  1.2, {x: "200px", ease: Sine.easeInOut})
+		.to("#phone",  1.2, {x: "200px", ease: Sine.easeInOut})
 		.fromTo("#slide3 .right-pane",  1, {x:  "0%"}, {x: "100%", ease: Linear.easeNone}, '-=1')
 		.fromTo("#slide3 .pane-content",  1, {x:  "0%"}, {x: "100%", ease: Linear.easeNone}, '-=1')
 		.fromTo("#slide4 .left-pane",  1, {x:  "-50%"}, {x: "0%", ease: Linear.easeNone}, '-=1')

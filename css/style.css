@@ -99,16 +99,46 @@ button:hover{
 	z-index: 1;
 }
 
-#phone-image{
+#phone img{
 	display: block;
 	width: 200px;
-	transform: translate(-200px, -50px);
 }
 
-.phone div{
+#phone{
 	margin: 10px auto;
 	width: 200px;
+	transform: translate(-200px, -50px);
 
+}
+
+#phone-parts{
+	visibility: hidden;
+	position: absolute;
+	top:0px;
+	left: -4px;
+	right:-4px;
+	height: 100%;
+}
+
+#phone-parts.visible{
+	visibility: visible;
+}
+
+#phone-parts img{
+	position: relative;
+	width:100%;
+}
+
+#phone-parts>div{
+	height: 100%;
+	display: inline-block;
+}
+
+#phone-parts .phone-left{
+	width:70px;
+}
+#phone-parts .phone-right{
+	width:132px;
 }
 
 /*Slide 1*/
