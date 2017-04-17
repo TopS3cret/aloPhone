@@ -6,12 +6,28 @@ $(function () { // wait for document ready
 			}
 		});
 
+	var picCount = 11;
+	function preload(img) {
+	    $('<img/>').src = img;
+	}
+	for (var i=0; i < picCount; i++) {
+		$('<img/>').src = 'images/rotation/'+ i + '.png';
+	}
+	$(window).scroll(function() {
+		var picCount = 11;
+		picCount--;
+		var offset = 2;
+      	var scroll = window.pageYOffset / $(window).height() * (picCount+offset);
+      	if (scroll > picCount)
+      		return;
+      	$('#phone-image').attr("src", "images/rotation/" + Math.round(scroll) + ".png");
+      	
+    });
 
 	// Animacije
 	var floatTween = TweenMax.fromTo("#phone", 2, {y:-50},{y:-60, repeat:-1, yoyo:true, ease: Sine.easeInOut});
 	TweenMax.to("#scroll-arrow", 0.5, {scaleX:1.2, scaleY:1.2, repeat:-1, yoyo:true, ease: Sine.easeInOut});
 	TweenMax.to("#scroll-up", 0.5, {scaleX:1.2, scaleY:1.2, repeat:-1, yoyo:true, ease: Sine.easeInOut});
-
 
 	// Prehodi na slide 2
 	var arrowSlide = new TimelineMax()
@@ -27,6 +43,7 @@ $(function () { // wait for document ready
 	var phoneSlide = new TimelineMax()
 		.to("#phone",  1, {y: "0px", ease: Linear.easeNone})
 
+	
 	var phoneSlideScene = new ScrollMagic.Scene({triggerElement: "#slide1", duration: 200})
 					.setTween(phoneSlide)
 					.offset(50)
