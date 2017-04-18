@@ -1,4 +1,5 @@
 var images = [];
+var frontImage, backImage;
 var picCount = 10;
 	
 function preload() {
@@ -6,6 +7,10 @@ function preload() {
 		images[i] = new Image();
 		images[i].src = 'images/rotation/'+ i + '.png';
 	}
+	frontImage = new Image();
+	frontImage.src = "images/front.png";
+	backImage = new Image();
+	backImage.src = "images/parts/case.png";
 }
 
 
@@ -57,18 +62,17 @@ $(function () { // wait for document ready
 					.addTo(controller)
 					.on("end", function (e) {
 						if(e.scrollDirection == 'REVERSE'){
-							$("#phone-image").attr("src", "images/front.png");
+							$("#phone-image").attr("src", frontImage.src);
 							$("#phone-parts").removeClass('visible');
 						} else {
-							$("#phone-image").attr("src", "images/parts/case.png");
+							$("#phone-image").attr("src", backImage.src);
 							$("#phone-parts").addClass('visible');
 						}
 						
 					})
 					.on("progress", function(e){
 				      	$('#phone-image').attr("src", images[Math.round(e.progress*(picCount-1))].src);
-					})
-					.addIndicators();
+					});
 
 	var slide2 = new ScrollMagic.Scene({triggerElement: "#slide2"})
 					.setPin("#slide2")
