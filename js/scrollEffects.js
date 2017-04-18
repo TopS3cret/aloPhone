@@ -1,28 +1,24 @@
+var images = [];
+var picCount = 10;
+	
+function preload() {
+	for (var i=0; i < picCount; i++) {
+		images[i] = new Image();
+		images[i].src = 'images/rotation/'+ i + '.png';
+	}
+}
+
+
 
 $(function () { // wait for document ready
-	var controller = new ScrollMagic.Controller({
-			globalSceneOptions: {
-				triggerHook: 'onLeave'
-			}
-		});
 
-	var picCount = 11;
-	function preload(img) {
-	    $('<img/>').src = img;
-	}
-	for (var i=0; i < picCount; i++) {
-		$('<img/>').src = 'images/rotation/'+ i + '.png';
-	}
-	$(window).scroll(function() {
-		var picCount = 11;
-		picCount--;
-		var offset = 2;
-      	var scroll = window.pageYOffset / $(window).height() * (picCount+offset);
-      	if (scroll > picCount)
-      		return;
-      	$('#phone-image').attr("src", "images/rotation/" + Math.round(scroll) + ".png");
-      	
-    });
+	preload();
+
+	var controller = new ScrollMagic.Controller({
+		globalSceneOptions: {
+			triggerHook: 'onLeave'
+		}
+	});
 
 	// Animacije
 	var floatTween = TweenMax.fromTo("#phone", 2, {y:-50},{y:-60, repeat:-1, yoyo:true, ease: Sine.easeInOut});
@@ -56,18 +52,27 @@ $(function () { // wait for document ready
 					})
 					.addTo(controller)
 
-	var slide2 = new ScrollMagic.Scene({triggerElement: "#slide2"})
-					.setPin("#slide2")
+	var rotatePhone = new ScrollMagic.Scene({triggerElement: "#slide2", duration:400})
+					.offset(-500)
 					.addTo(controller)
-					.setClassToggle("#phone-parts", "visible")
-					.on("start", function (e) {
+					.on("end", function (e) {
 						if(e.scrollDirection == 'REVERSE'){
 							$("#phone-image").attr("src", "images/front.png");
+							$("#phone-parts").removeClass('visible');
 						} else {
 							$("#phone-image").attr("src", "images/parts/case.png");
+							$("#phone-parts").addClass('visible');
 						}
 						
 					})
+					.on("progress", function(e){
+				      	$('#phone-image').attr("src", images[Math.round(e.progress*(picCount-1))].src);
+					})
+					.addIndicators();
+
+	var slide2 = new ScrollMagic.Scene({triggerElement: "#slide2"})
+					.setPin("#slide2")
+					.addTo(controller)
 
 	var slide2paneEnter = new TimelineMax()
 		.fromTo("#slide2 .right-pane",  1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone})
