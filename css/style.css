@@ -1,6 +1,6 @@
 html, body {
 	height: 100%;
-	color: #fff;
+	color: #333;
 	font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -8,7 +8,7 @@ body{
 	overflow-x: hidden;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h4 {
 	font-family: 'Josefin Slab', serif;
 }
 
@@ -20,7 +20,22 @@ h1{
 h2{
 	font-weight: bold;
 	font-size: 3.6em;
+	margin-bottom: 0px;
+}
+
+h3{
+	font-weight: 200;
+	text-transform: uppercase;
+	color: #1F7F7A;
 	margin-bottom: 35px;
+	margin-top: 0px;
+	font-size: 1.5em;
+	letter-spacing: 2px;
+
+}
+
+.inverted * {
+	color: #fff;
 }
 
 button{
@@ -53,12 +68,11 @@ button:hover{
 
 .slide{
 	height: 100%;
-	box-shadow: 0px -5px 10px rgba(0,0,0,0.3);
 }
 
-.slide p{
-	font-size:1.6em;
-	color: rgba(255,255,255,0.7);
+p{
+	font-size:1.4em;
+	color: #555;
 }
 
 .div-line{
@@ -118,7 +132,7 @@ button:hover{
 	visibility: hidden;
 	position: absolute;
 	top:0px;
-	left: -4px;
+	left: -1px;
 	right:-4px;
 	height: 100%;
 }
@@ -138,11 +152,11 @@ button:hover{
 }
 
 #phone-parts .phone-left{
-	width:69.5px;
+	width:67.2px;
 }
 #phone-parts .phone-right{
 	margin-left: -1px;
-	width:133px;
+	width:129.7px;
 }
 
 /*Slide 1*/
@@ -166,61 +180,77 @@ button:hover{
 /*Slide 2*/
 
 #slide2 {
-	background-color: #FFC857;
+	background-color: #fff;
 	margin-bottom: 500px;
 }
 
+#slide2 h3 {
+	color: #885319;
+}
+
 #slide2 .left-pane{
-	background-color:#FFC857
+	background-color:#FFEEDB;
 }
 
 #slide2 .right-pane{
-	background-color:#422F3C
+	background-color:#fff;
 }
 
 /*Slide 3*/
 
 #slide3 {
-	background-color: #2A2D30;
+	background-color:#fff;
 	margin-bottom: 500px;
 }
 
+#slide3 h3 {
+	color: #6f2928;
+}
+
 #slide3 .left-pane{
-	background-color:#2A2D30
+	background-color:#EBBAB9;
 }
 
 #slide3 .right-pane{
-	background-color:#255F85;
+	background-color:#fff;
 }
 
 /*Slide 4*/
 
 #slide4 {
-	background-color: #232330;
+	background-color:#fff;
 	margin-bottom: 600px;
 }
 
+#slide4 h3 {
+	color: #3c5d79;
+}
+
 #slide4 .left-pane{
-	background-color:#C5283D
+	background-color:#fff;
 }
 
 #slide4 .right-pane{
-	background-color:#232330
+	background-color:#6A8EAE;
 }
 
 /*Slide 5*/
 
 #slide5 {
-	background-color: #2E2330;
+	background-color:#fff;
 	margin-bottom: 600px;
 }
 
+#slide5 h3 {
+	color: #844c30;
+}
+
 #slide5 .left-pane{
-	background-color:#2E2330
+	background-color:#fff;
 }
 
 #slide5 .right-pane{
-	background-color:#8E0045
+	background-color:#D0B8AC;
 }
 
 #slide6 {

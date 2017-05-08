@@ -1,6 +1,6 @@
 var images = [];
 var frontImage, backImage;
-var picCount = 10;
+var picCount = 22;
 	
 function preload() {
 	for (var i=0; i < picCount; i++) {
