@@ -58,7 +58,7 @@ $(function () { // wait for document ready
 					.addTo(controller)
 
 	var rotatePhone = new ScrollMagic.Scene({triggerElement: "#slide2", duration:400})
-					.offset(-500)
+					.offset(-600)
 					.addTo(controller)
 					.on("end", function (e) {
 						if(e.scrollDirection == 'REVERSE'){
@@ -79,18 +79,16 @@ $(function () { // wait for document ready
 					.addTo(controller)
 
 	var slide2paneEnter = new TimelineMax()
-		.fromTo("#slide2 .right-pane",  1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone})
-		.fromTo("#slide2 .pane-content",  1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone}, '-=1')
 		.to("#phone-r1", 0.5, {x:150, ease: Linear.easeNone}, '-=0.5')
 		.to("#phone-r2", 0.5, {x:150, ease: Linear.easeNone}, '-=0.5')
 		.to("#phone-r1", 0.5, {x:300, y:50, ease: Linear.easeNone}, '-=0')
 		.to("#phone-r2", 0.5, {x:460, y:-83, ease: Linear.easeNone}, '-=0.5')
-		.set("#slide3 .right-pane", {x:  "100%"})
-		.set("#slide3 .pane-content",  {x:  "100%"});
+		.fromTo("#slide2 .pane-content",  0.5, {x:  "15%", autoAlpha:0}, {x: "0%", autoAlpha:1, ease: Linear.easeNone}, '-=0.5')
+		.set("#slide3 .pane-content",  {y:  "30%", autoAlpha: 0});
 
-	var slide2pane = new ScrollMagic.Scene({triggerElement: "#slide2", duration: 600})
+	var slide2pane = new ScrollMagic.Scene({triggerElement: "#slide2", duration: 500})
 					.setTween(slide2paneEnter)
-					.offset(-200)
+					.offset(-100)
 					.addTo(controller);
 
 	var parts2Exit = new TimelineMax()
@@ -111,12 +109,11 @@ $(function () { // wait for document ready
 					.addTo(controller)
 
 	var slide3paneEnter = new TimelineMax()
-		.fromTo("#slide3 .right-pane",  1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone})
-		.fromTo("#slide3 .pane-content",  1, {x:  "100%"}, {x: "0%", ease: Linear.easeNone}, '-=1')
-		.to("#phone-r3", 0.5, {x:150, ease: Linear.easeNone}, '-=1')
-		.to("#phone-r4", 0.5, {x:150, ease: Linear.easeNone}, '-=1')
-		.to("#phone-r3", 0.6, {x:300, y:-210, ease: Linear.easeNone}, '-=0.4')
-		.to("#phone-r4", 0.6, {x:460, y:-278, ease: Linear.easeNone}, '-=0.6');
+		.to("#phone-r3", 0.5, {x:150, ease: Linear.easeNone})
+		.to("#phone-r4", 0.5, {x:150, ease: Linear.easeNone}, '-=0.5')
+		.to("#phone-r3", 0.6, {x:300, y:-210, ease: Linear.easeNone}, '-=0')
+		.to("#phone-r4", 0.6, {x:460, y:-278, ease: Linear.easeNone}, '-=0.6')
+		.fromTo("#slide3 .pane-content",  0.5, {y:  "30%", autoAlpha:0}, {y: "0%",autoAlpha:1, ease: Linear.easeNone}, '-=0.4');
 
 	var slide3pane = new ScrollMagic.Scene({triggerElement: "#slide3", duration: 500})
 					.setTween(slide3paneEnter)
@@ -130,12 +127,12 @@ $(function () { // wait for document ready
 		.fromTo("#slide3 .pane-content",  1, {x:  "0%"}, {x: "100%", ease: Linear.easeNone}, '-=1')
 		.to("#phone-r3", 0.5, {x:'+=200', autoAlpha:0, ease: Linear.easeNone}, '-=1')
 		.to("#phone-r4", 0.5, {x:'+=200', autoAlpha:0, ease: Linear.easeNone}, '-=1')
-		.fromTo("#slide4 .left-pane",  1, {x:  "-50%"}, {x: "0%", ease: Linear.easeNone}, '-=1')
-		.fromTo("#slide4 .pane-content",  1, {x:  "-30%", autoAlpha:0}, {x: "0%", autoAlpha:1, ease: Linear.easeNone}, '-=0.5')
-		.to("#phone-l1", 0.3, {x:-80, ease: Linear.easeNone}, '-=1')
-		.to("#phone-l3", 0.3, {x:-80, ease: Linear.easeNone}, '-=1')
-		.to("#phone-l1", 0.6, {x:-270, rotation:90, ease: Linear.easeNone}, '-=0.7')
-		.to("#phone-l3", 0.6, {x:-410, y:-240, ease: Linear.easeNone}, '-=0.7');
+		.fromTo("#slide4 .left-pane",  1, {x:  "-75%"}, {x: "0%", ease: Linear.easeNone}, '-=1')
+		.to("#phone-l1", 0.3, {x:-80, ease: Linear.easeNone}, '-=0.5')
+		.to("#phone-l3", 0.3, {x:-80, ease: Linear.easeNone}, '-=0.5')
+		.to("#phone-l1", 0.6, {x:-270, rotation:90, ease: Linear.easeNone}, '-=0.2')
+		.to("#phone-l3", 0.6, {x:-410, y:-240, ease: Linear.easeNone}, '-=0.6')
+		.fromTo("#slide4 .pane-content",  0.4, {x:  "-30%", autoAlpha:0}, {x: "0%", autoAlpha:1, ease: Linear.easeNone}, '-=0.4');
 
 	var changeSideScene = new ScrollMagic.Scene({triggerElement: "#slide3", duration: 1000})
 					.setTween(changeSide)
@@ -159,16 +156,15 @@ $(function () { // wait for document ready
 
 	// Prehodi na slide 5
 	var slide5paneEnter = new TimelineMax()
-		.fromTo("#slide5 .right-pane",  1, {autoAlpha:0}, {autoAlpha:1, ease: Linear.easeNone})
-		.fromTo("#slide5 .pane-content",  1, {y:200}, {y:0, ease: Linear.easeNone}, '-=1')
-		.to("#phone-l2", 0.3, {x:-80, ease: Linear.easeNone}, '-=0.9')
-		.to("#phone-l4", 0.3, {x:-80, ease: Linear.easeNone}, '-=0.9')
-		.to("#phone-l2", 0.5, {x:-270, rotation:90, y:-120, ease: Linear.easeNone}, '-=0.6')
-		.to("#phone-l4", 0.5, {x:-410, y:-294, ease: Linear.easeNone}, '-=0.6');
+		.to("#phone-l2", 0.3, {x:-80, ease: Linear.easeNone})
+		.to("#phone-l4", 0.3, {x:-80, ease: Linear.easeNone}, '-=0.3')
+		.to("#phone-l2", 0.5, {x:-270, rotation:90, y:-120, ease: Linear.easeNone})
+		.to("#phone-l4", 0.5, {x:-410, y:-294, ease: Linear.easeNone}, '-=0.5')
+		.fromTo("#slide5 .pane-content",  0.3, {y:300, autoAlpha:0}, {y:0, autoAlpha:1, ease: Linear.easeNone}, '-=0.3')
 
-	var slide5pane = new ScrollMagic.Scene({triggerElement: "#slide5", duration: 800})
+	var slide5pane = new ScrollMagic.Scene({triggerElement: "#slide5", duration: 600})
 					.setTween(slide5paneEnter)
-					.offset(-600)
+					.offset(-500)
 					.addTo(controller);
 
 	var slide5pane = new ScrollMagic.Scene({triggerElement: "#slide5"})
